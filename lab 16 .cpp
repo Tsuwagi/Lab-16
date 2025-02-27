@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
 #include <ctime>
-#include <cstdlib> 
-#include <algorithm> 
 
 int f(int n) {
     if (n <= 1) return 1;
