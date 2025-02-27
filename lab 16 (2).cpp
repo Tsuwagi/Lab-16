@@ -1,24 +1,25 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-bool isSorted(int arr[], int size) {
-    for (int i = 0; i < size - 1; i++) {
+bool isSorted(const vector<int> arr) {
+    for (size_t i = 0; i < arr.size() - 1; i++) {
         if (arr[i] > arr[i + 1]) {
-            return false; // Якщо знайдено порушення порядку, повертаємо false
-        }
+            return false;
+        } 
     }
-    return true; // Якщо всі елементи у правильному порядку, повертаємо true
+    return true; 
 }
 
 int main() {
-    int arr1[] = {1, 2, 3, 4, 5}; // Впорядкований масив
-    int arr2[] = {1, 3, 2, 4, 5}; // Не впорядкований масив
+    
+    vector<int> arr = {1, 2, 3, 4, 5}; 
 
-    int size1 = sizeof(arr1) / sizeof(arr1[0]);
-    int size2 = sizeof(arr2) / sizeof(arr2[0]);
-
-    cout << (isSorted(arr1, size1) ? "Sorted" : "Not sorted") << endl;
-    cout << (isSorted(arr2, size2) ? "Sorted" : "Not sorted") << endl;
+    if (isSorted(arr)) {
+        cout << "Array is sorted" << endl;
+    } else {
+        cout << "Array is not sorted" << endl;
+    }
 
     return 0;
 }
