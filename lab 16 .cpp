@@ -3,9 +3,11 @@ using namespace std;
 #include <ctime>
 
 int f(int n) {
-    if (n <= 1) return 1;
-    return n * f(n - 1);
+    double r = 1;
+    for (int i = 2; i <= n; i++) r *= i;
+    return r;
 }
+
 
 int main() {
 
@@ -16,15 +18,10 @@ int main() {
         for ( int i = 0; i < 8; i++){
         A[i] = rand() % 10 + 1;
 }
-    cout << "Enter 8 full numbers:\n";
-
-    for (int i = 0; i < 8; i++){
+        for (int i = 0; i < 8; i++){
         cout << A[i] << " ";}
         cout << endl;
 
-        int last = A[7];
-        int result = f(last);
-
-        cout << "Factorial " << last << " = " << result << endl;
+        cout << "Factorial " << A[7] << " = " << f(A[7]) << endl;
         return 0;
 }
